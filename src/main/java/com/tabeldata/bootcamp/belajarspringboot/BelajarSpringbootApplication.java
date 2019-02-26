@@ -1,13 +1,14 @@
 package com.tabeldata.bootcamp.belajarspringboot;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootApplication
 public class BelajarSpringbootApplication {
-
 	public static void main(String[] args) {
-		SpringApplication.run(BelajarSpringbootApplication.class, args);
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-container.xml");
+		Mahasiswa hima = (Mahasiswa) context.getBean("hima");
+		
+		System.out.println("Nama: " + hima.getNama() + ", Semester: " + 
+		hima.getSemester() + ", Kelas: " + hima.getKelas().getNama());
 	}
-
 }

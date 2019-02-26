@@ -1,15 +1,17 @@
 package com.tabeldata.bootcamp.belajarspringboot;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Mahasiswa {
 	
-	
-	public Mahasiswa(String nama, Integer semester, Kelas kelas) {
-		this.nama = nama;
-		this.semester = semester;
-		this.kelas = kelas;
-	}
+	@Value("Himawan Eka Putra")
 	private String nama;
+	@Value("8")
 	private Integer semester;
+	@Autowired
 	private Kelas kelas;
 	
 	public String getNama() {

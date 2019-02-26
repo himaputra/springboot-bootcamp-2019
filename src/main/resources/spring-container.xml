@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
-        
-    <bean id="hima" class="com.tabeldata.bootcamp.belajarspringboot.Mahasiswa">
-    	<constructor-arg name="nama" value="Himawan Eka Putra" />
-    	<constructor-arg name="semester" value="8" />
-    	<constructor-arg name="kelas" ref="sk" />
-    </bean>
-    <bean id="sk" class="com.tabeldata.bootcamp.belajarspringboot.Kelas">
-    	<property name="nama" value="Sistem Komputer"></property>
-    </bean>
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<context:component-scan base-package="com.tabeldata.bootcamp.belajarspringboot"></context:component-scan>
+	
 </beans>

@@ -4,9 +4,10 @@ import java.util.UUID;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 @Component
-@Scope("prototype")
+@Scope(value="prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class RandomStringPrototype {
 private String value;
 	

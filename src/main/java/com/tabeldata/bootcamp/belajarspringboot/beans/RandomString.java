@@ -1,4 +1,4 @@
-package com.tabeldata.bootcamp.belajarspringboot;
+package com.tabeldata.bootcamp.belajarspringboot.beans;
 
 import java.util.UUID;
 

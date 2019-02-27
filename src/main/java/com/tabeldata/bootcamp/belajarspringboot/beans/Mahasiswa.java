@@ -1,4 +1,4 @@
-package com.tabeldata.bootcamp.belajarspringboot;
+package com.tabeldata.bootcamp.belajarspringboot.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,15 +1,23 @@
 package com.tabeldata.bootcamp.belajarspringboot.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Mahasiswa {
+	public Mahasiswa() {
+		
+	}
 	
-	@Value("Himawan Eka Putra")
+	public Mahasiswa(String nama, Integer semester) {
+		this.nama = nama;
+		this.semester = semester;
+	}
+	
+	
+	
 	private String nama;
-	@Value("8")
+	
 	private Integer semester;
 	@Autowired
 	private Kelas kelas;
@@ -39,6 +47,6 @@ public class Mahasiswa {
 	
 	@Override
     public String toString() {
-        return String.format("singleton: %s , protoptype: %s", this.singletonString.getValue(), this.prototypeString.getValue());
+        return String.format("nama: %s , semester: %s", this.nama, this.semester, this.kelas.getNama());
     }
 }

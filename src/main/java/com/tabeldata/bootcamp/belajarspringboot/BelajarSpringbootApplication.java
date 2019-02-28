@@ -1,6 +1,7 @@
 package com.tabeldata.bootcamp.belajarspringboot;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,5 +32,23 @@ public class BelajarSpringbootApplication {
 		List<Buku> listByNameAndPengarang = dao.findByNameAndNamaPengarang("S", "H");
 		System.out.println(listByNameAndPengarang.toString());
 		System.out.println(dao.daftarList().size());
+		
+		System.out.println("--- Fitur Insert ---");
+		Buku pemrograman = new Buku();
+		pemrograman.setId(UUID.randomUUID().toString());
+		pemrograman.setNama("Bahasa Pemrograman Java II");
+		pemrograman.setIsbn("4231");
+		pemrograman.setNamaPengarang("Nanra Sukedy");
+		pemrograman.setPenerbit("Airlangga");
+		pemrograman.setTahunTerbit(2019);
+		pemrograman.setCreatedBy("operator");
+		
+		dao.save(pemrograman);
+		
+		System.out.println("--- Update list data ---");
+		List<Buku> list = dao.daftarList();
+		for(Buku buku : list) {
+			System.out.println(buku.toString());
+		}
 	}
 }

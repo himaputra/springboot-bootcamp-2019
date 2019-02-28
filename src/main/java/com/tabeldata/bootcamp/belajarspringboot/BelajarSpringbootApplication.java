@@ -1,5 +1,7 @@
 package com.tabeldata.bootcamp.belajarspringboot;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +23,10 @@ public class BelajarSpringbootApplication {
 		System.out.println("--- Search by ID ---");
 		try {
 			Buku progjava = dao.findById("prog-java");
+			progjava.setTahunTerbit(2018);
+			progjava.setLastUpdatedDate(Timestamp.valueOf(LocalDateTime.now()));
+			progjava.setLastUpdatedBy("hima");
+			dao.update(progjava);
 			System.out.println(progjava.toString());
 			System.out.println(dao.daftarList().size());
 		} catch (EmptyResultDataAccessException erdae) {
@@ -43,12 +49,14 @@ public class BelajarSpringbootApplication {
 		pemrograman.setTahunTerbit(2019);
 		pemrograman.setCreatedBy("operator");
 		
-		dao.save(pemrograman);
+//		dao.save(pemrograman);
+		dao.delete("24efbd11-7dd2-43e8-93f0-afd2721dd22");
 		
 		System.out.println("--- Update list data ---");
 		List<Buku> list = dao.daftarList();
 		for(Buku buku : list) {
 			System.out.println(buku.toString());
 		}
+		
 	}
 }

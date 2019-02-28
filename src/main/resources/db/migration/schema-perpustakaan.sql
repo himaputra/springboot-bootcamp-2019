@@ -14,4 +14,4 @@ create table buku(
 
 -- Insert data ke dalam tabel
 insert into buku(id, nama, isbn, nama_pengarang, penerbit, created_by)
-values ('prog-java', 'Bahasa Pemrograman Java', '1234', 'Himawan Eka Putra', 'INF', 'admin');
+values ('prog-spring', 'Spring', '4321', 'Himawan Eka Putra', 'INF', 'admin');

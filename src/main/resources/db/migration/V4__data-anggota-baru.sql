@@ -1,0 +1,2 @@
+insert into anggota(id, nama, ttl, jenis_kelamin, alamat, agama, berlaku, created_by)
+values ('3203012503770022', 'Dimas Maryanto', '25-03-1993', 'Laki-laki', 'Jl. Slamet', 'Islam', '25-03-2019', 'Admin');
